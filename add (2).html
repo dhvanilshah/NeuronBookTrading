@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+	test app
+-->
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/jquery.sidr.dark.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/parse-1.2.19.js"></script>
+		<script src="js/jquery-1.11.1.js"></script>
+
+		<script type="text/javascript">
+			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+		</script>
+
+	</head>
+
+	<body>
+		<header>
+			<a href="profile.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
+			<a id="simple-menu" href="#sidr"><img src="img/settings.png" alt="settings" id="settings" height="50px" width="50px"></a>
+
+			<div id="sidr">
+				<ul>
+	    			<li><a href="#"><b>Edit Profile</b></a></li>
+	    			<li><a href="booklist.html"><b>My Books</b></a></li>
+	    			<li><a href="#"><b>Sign Out</b></a></li>
+	  			</ul>
+			</div>
+	 
+			<script>
+			$(document).ready(function() {
+	  		$('#simple-menu').sidr();
+			});
+			</script>
+		</header>
+
+		
+		<div class="col-xs-12">
+		<div class="not">
+		<h2>Add</h2>
+		</div>
+		</div>
+
+			<nav class="else">
+		        <ul>
+		          <li><a href="add.html" class="pending left selected nav_1">HAVE</a></li>
+		          <li><a href="want.html" class="accepted right nav_2">WANT</a></li>
+		        </ul>
+		    </nav>
+		
+			<form id="book_form" class="book_form" name="book_form" action="" method="post">
+
+				<div class="col-xs-8">
+					<a href=""><h2>Scan Barcode</h2></a>
+				</div>
+
+				<div class="col-xs-12">
+
+						<ul>
+						
+						<li>
+							<input id="title" type="text" name="title" placeholder="Book Title" required />
+						</li>
+						
+						<li>
+							<input id="author" type="text" name="author" placeholder="Author" required />
+						</li>
+						
+						<li>
+						 	<input id="edition" type="number" name="quantity"placeholder="Edition number" style="height: 30px"
+						 	min="1" placeholder="Edition">
+						</li>
+						
+						<li>
+						 	<input id="isbn" type="text" name="series" placeholder="ISBN Number" required>
+						</li>
+						
+						<li>
+							<textarea id="description" type="text" name="description" cols="10" rows="6" placeholder="Description"></textarea>
+						</li>
+						
+						<li>
+						 	<select id="condition" name="condition" required>
+								<option value="New">Condition</option>
+								<option value="New">New</option>
+								<option value="Used">Used</option>
+								<option value="Old">Old</option>
+							</select>
+						 </li>
+						
+						<li>
+							<button id="submitbtn"class="submit" type="Submit">Add to Books I HAVE</button>
+							<!-- <a href="yourbooks.html" class="submit" type="Submit">Submit</a> -->
+						</li>
+						
+						</ul>
+					
+
+				</div>
+			</form>
+
+			<script src="js/jquery.sidr.min.js"></script>
+
+
+<script type="text/javascript">
+Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+
+$("#book_form").submit(function(event){
+
+	event.preventDefault();
+
+		var AddBook = Parse.Object.extend("AddBook");
+
+		var newBook = new AddBook();
+
+
+		var title = $("#title").val();
+		var searchTitle = $("#title").val().toLowerCase();
+		var author = $("#author").val();
+		var searchAuthor = $("#author").val().toLowerCase();
+		var edition = $("#edition").val();
+		var isbn = $("#isbn").val();
+		var description = $("#description").val();
+		var condition = $("#condition").val();
+		var currentUser = Parse.User.current();
+
+		newBook.set("title", title);
+		newBook.set("searchTitle", searchTitle);
+		newBook.set("author", author);
+		newBook.set("searchAuthor", searchAuthor);
+		newBook.set("edition", edition);
+		newBook.set("isbn", isbn);
+		newBook.set("description", description);
+		newBook.set("condition", condition);
+		newBook.set("owner", currentUser);
+
+		newBook.save(null, {
+  success: function(newBook) {
+    // Execute any logic that should take place after the object is saved.
+    console.log("Success");
+    location.href="profile.html";
+  },
+  error: function(newBook, error) {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and description.
+    console.log('Failed to create new object, with error code: ' + error.message);
+  }
+});
+
+});
+
+</script>
+
+	</body>
+</html>

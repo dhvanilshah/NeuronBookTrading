@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+	test app
+-->
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/jquery.sidr.dark.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/parse-1.2.19.js"></script>
+		<script src="js/jquery-1.11.1.js"></script>
+
+		<script type="text/javascript">
+			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+		</script>
+
+	</head>
+
+	<body class="booklist-body">
+		<header>
+			<a href="profile.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
+			<a id="simple-menu" href="#sidr"><img src="img/settings.png" alt="settings" id="settings" height="50px" width="50px"></a>
+
+			<div id="sidr">
+				<ul>
+<!-- 	    			<li><a href="#"><b>Edit Profile</b></a></li>
+	    			<li><a href="booklist.html"><b>My Books</b></a></li> -->
+	    			<li><a href="index.html"><b>Sign Out</b></a></li>
+	  			</ul>
+			</div>
+	 
+			<script>
+			$(document).ready(function() {
+	  		$('#simple-menu').sidr();
+			});
+			</script>
+		</header>
+
+		<div class="col-xs-12">
+
+			<div class="pagetitle">
+				<h2>My Books</h2>
+			</div>
+
+		<div class="booklist">
+
+			<p><span class="my_book_title">Title</span> (<span class="my_book_edition">9</span>th Edition)</p>
+			<p>By:<span class="my_book_author"> Authors</p>
+			<p><button type="submit" class="remove">Remove</button></p>
+
+		</div>
+
+		<div class="booklist">
+
+			<p><span class="my_book_title">Title</span> (<span class="my_book_edition">9</span>th Edition)</p>
+			<p>By:<span class="my_book_author"> Authors</p>
+			<!-- <p><button type="submit" class="remove">Remove</button></p> -->
+
+		</div>
+
+		<div class="booklist">
+
+			<p><a href="">Campbell Biology (9th Edition)</a></p>
+			<p>By: Jane B. Reece, Lisa A. Urry, Michael L. Cain and Steven A. Wasserman</p>
+			<!-- <p><button type="submit" class="remove">Remove</button></p> -->
+
+		</div>
+
+		<div class="booklist">
+
+			<p><a href="">Campbell Biology (9th Edition)</a></p>
+			<p>By: Jane B. Reece, Lisa A. Urry, Michael L. Cain and Steven A. Wasserman</p>
+			<!-- <p><button type="submit" class="remove">Remove</button></p> -->
+
+		</div>
+
+
+		</div>
+
+		<script src="js/jquery.sidr.min.js"></script>
+
+	</body>
+</html>

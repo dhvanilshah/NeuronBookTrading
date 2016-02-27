@@ -1,0 +1,984 @@
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+header {
+	background: #001D24;
+	width: 100%;
+}
+
+.app-body {
+	background: url('../img/background0.jpg');
+	margin-top: -10px;
+	background-size: 100%;
+	padding-bottom: 100%;
+	background-position: absolute;
+	height: 600px;
+	padding-top: 50px;
+}
+
+#settings {
+	float: right;
+}
+
+#profile-pic {
+	display: block;
+	border-radius: 100%;
+	clear:both;
+	margin: 10px;
+	box-shadow: 2px 2px 2px #333;
+}
+
+#profile-pic img {
+	margin-top: 10px;
+}
+
+
+.info p {
+	font-weight: bold;
+	color: #fff;
+	float: center;
+}
+
+.info {
+	float: center;
+	margin: 0 auto;
+	font-size: 50px;
+
+}
+
+.major {
+	float: center;
+	font-size: 50px;
+}
+
+.nav {
+	text-align: center;
+}
+
+.nav a p {
+	margin: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 50px;
+	font-family: 'Dosis', sans-serif;
+}
+
+#notifications {
+	background: #009393;
+	color: #003333;
+	font-size: 2em;
+	box-shadow: 3px 3px 2px #004A4A;
+}
+
+.major {
+	font-size: 15px;
+	margin-top: -10px;
+}
+
+#logo {
+	margin: 5px;
+}
+
+#settings {
+	margin: 15px;
+}
+
+#find {
+	background: #68b12f;
+	color: #003333;
+	font-size: 2em;
+	box-shadow: 3px 3px 2px #3D991F
+}
+
+#add {
+	background: #00CCCC;
+	color: #003333;
+	font-size: 2em;
+	box-shadow: 3px 3px 2px #007A7A
+}
+
+/*.nav p img {
+	float: left;
+	margin: -10px;
+}*/
+
+#find img {
+	height: 2em;
+	width: 2em;
+	float: left;
+	margin: -10px;
+}
+
+#notifications img {
+	height: 2em;
+	width: 2em;
+	float: left;
+	margin: -10px;
+}
+
+#add img {
+	height: 2em;
+	width: 2em;
+	float: left;
+	margin: -10px;
+}
+
+.nav a:active #add {
+	 background: #007A7A;
+}
+
+.nav a:active #notifications {
+	background: #004A4A;
+}
+
+.nav a:active #find {
+	background: #3D991F;
+}
+
+/**************************************
+				ADD
+**************************************/
+
+.book_form h2 {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 50px;
+	font-family: 'Dosis', sans-serif;
+	color: #B8BCBC;
+	text-align: center;
+	margin: 0px;
+}
+
+.book_form button#startScan {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 78px;
+	width: 250px;
+	border-radius: 50px;
+	/*border: solid 5px #B8BCBC;*/
+	box-shadow: 3px 3px 3px #888888;
+	background: -webkit-linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* Standard syntax */
+}
+
+.book_form button#startScan:active {
+	margin-left: 8px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	box-shadow: none;
+	background: -webkit-linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* Standard syntax */
+}
+
+/*input {
+	float: right;
+}
+
+textarea {
+	float: right;
+}*/
+
+.book_form {
+	font-family: "Dosis", sans-serif;
+}
+
+.book_form ul {
+	width: 100%;
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 0px;
+	padding: 0px;
+}
+
+.book_form li {
+	padding: 12px;
+	border-bottom: 1px solid #f2f2f2;
+	position: relative;
+}
+
+.book_form li:first-child {
+	border-top: 1px solid #777;
+}
+
+.book_form li:last-child {
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.col-xs-8 {
+	margin-top: -30px;
+	display: inline;
+}
+
+.required_notification {
+	color: #d45252;
+	margin:5px 0 0 0;
+	display: inline;
+}
+
+.book_form li label {
+	width: 100px;
+	margin-top: 3px;
+	display: inline-block;
+	float: left;
+	padding: 3px;
+}
+
+.book_form li input, .book_form select {
+	height: 30px;
+	width: 100%;
+	padding: 5px 8px;
+	font-size: 17px;
+}
+
+.book_form select {
+	width: 95%;
+}
+
+.book_form textarea {
+	padding: 8px;
+	width: 100%;
+	border: 1px solid #fff;
+}
+
+.book_form a {
+	margin-left: 100px;
+}
+
+.book_form li input, .book_form select { 
+    border:1px solid #fff;
+    border-radius:2px;
+    padding-right: 30px;
+    font-size: 
+}
+
+.book_form select { 
+    border:1px solid #ddd;
+    border-radius:2px;
+    padding-right: 30px;
+    font-size: 
+}
+
+.book_form input:focus, .book_form textarea:focus {
+    background: #fff; 
+    border:1px solid #fff; 
+    box-shadow: 0 0 3px #aaa; 
+}
+
+a.submit {
+    background-color: #00B2B2;
+    border-radius: 3px;
+    color:white;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+}
+
+a.submit:active {
+    background-color: #007D7D;
+     
+}
+
+.col-xs-8 a:active h2 {
+	background: #D4D7D7;
+}
+
+/***************************************
+	Results
+***************************************/
+
+
+.search-results div img {
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+}
+
+#result_0 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+	font-family: "Dosis", sans-serif;
+	font-size: 1.3em;
+	font-weight: bold;
+	border-bottom: #D1E3E3 solid 1px;
+}
+
+#result_1 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_2 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_3 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_4 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_5 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+.search-results {
+	font-family: 'Dosis', sans-serif;
+}
+
+.search-results h3 {
+	border-bottom: 1px solid #777;
+	padding-bottom: 10px
+}
+
+.search-results a, .search-results a:hover {
+	color: #478FB2;
+}
+
+.search-results a:active {
+	color: #152B35;
+}
+
+.book_details img{
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 2%;
+	margin-right: 10px;
+	max-width: 220px;
+}
+
+.details ul li {
+	list-style: disc;
+}
+
+.hasthebook div {
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.hasthebook div img {
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+	border-radius: 100%;
+	max-width: 120px;
+}
+
+.people {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+
+.rating > span:hover:before {
+   content: "\2605";
+   position: absolute;
+   color: #FFCC00;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 1em;
+  width: 75%;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: #FFCC00;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.hasthebook h2 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+	font-family: 'Dosis', sans-serif; 
+}
+
+
+
+/********************************************
+********************************************/
+
+
+.login_logo {
+	width: 90%;
+	position: absolute;
+	top: 75px;
+}
+
+body.login_body {
+	background: url('../img/login-bg.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: 100%;
+}
+
+.login_form h2 {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 50px;
+	font-family: 'Dosis', sans-serif;
+	border: solid 5px #B8BCBC;
+	color: #B8BCBC;
+	text-align: center;
+}
+
+/*input {
+	float: right;
+}
+
+textarea {
+	float: right;
+}*/
+
+.login_form {
+	font-family: "Dosis", sans-serif;
+}
+
+.login_form ul {
+	width: 100%;
+	list-style-type: none;
+	list-style-position: outside;
+	margin-top: 80%;
+	padding: 0px;
+}
+
+.login_form li {
+	position: relative;
+}
+
+.col-xs-8 {
+	margin: 0;
+	display: inline;
+	margin-bottom: -20px;
+}
+
+.required_notification {
+	color: #d45252;
+	margin:5px 0 0 0;
+	display: inline;
+}
+
+.login_form input {
+	height: 50px;
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+}
+
+.login_form textarea {
+	padding: 8px;
+	width: 60%;
+}
+
+
+.login_form input#username { 
+    border:1px solid #F2F2F2;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+.login_form input#password { 
+    border:1px solid #F2F2F2;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.login_form input:focus {
+    background: #fff; 
+    box-shadow: 0 0 3px #aaa; 
+}
+
+
+
+button.signin {
+    background-color: #00CCCC;
+    border-radius: 10px;
+    color:white;
+    font-weight: bold;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+button.signin:active {
+    background-color:#008080;
+     
+}
+
+.login_form li.button {
+	margin: 10px;
+	margin-top: 20px;
+}
+
+a.register {
+	background-color: #CCFFFF;
+    border-radius: 10px;
+    color: #009999;
+    font-weight: bold;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+a.register:active {
+    background-color:#008080;
+     
+}
+
+.login_form li.register {
+	margin-top: 10px;
+}
+
+.buttons {
+	text-align: center;
+	margin-top: 20%
+}
+
+/***************************************
+Playing with the input boxes
+***************************************/
+
+.input_container {
+	position:relative; padding:0; margin:0; 
+}
+
+.input_img {
+ position:absolute; bottom:8px; left:10px; width:20px;
+}
+
+
+/***************************************
+***************************************/
+
+/***********************************************
+***********************************************/
+.signup_form h2 {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 50px;
+	font-family: 'Dosis', sans-serif;
+	border: solid 5px #B8BCBC;
+	color: #B8BCBC;
+	text-align: center;
+}
+
+/*input {
+	float: right;
+}
+
+textarea {
+	float: right;
+}*/
+
+.signup_form {
+	font-family: "Dosis", sans-serif;
+}
+
+.signup_form ul {
+	width: 100%;
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 0px;
+	padding: 0px;
+}
+
+.signup_form li {
+	padding: 12px;
+	border-bottom: 1px solid #f2f2f2;
+	position: relative;
+}
+
+.signup_form li:first-child {
+	border-top: 1px solid #777;
+}
+
+.signup_form li:last-child {
+	border-bottom: 1px solid #777
+}
+
+.col-xs-8 {
+	margin-top: -30px;
+	display: inline;
+}
+
+.required_notification {
+	color: #d45252;
+	margin:5px 0 0 0;
+	display: inline;
+}
+
+.signup_form li label {
+	width: 100px;
+	margin-top: 3px;
+	display: inline-block;
+	float: left;
+	padding: 3px;
+}
+
+.signup_form li input, .signup_form select {
+	height: 30px;
+	width: 100%;
+	padding: 5px 8px;
+	font-size: 17px;
+}
+
+.signup_form select {
+	width: 95%;
+}
+
+.signup_form textarea {
+	padding: 8px;
+	width: 60%;
+}
+
+.signup_form a {
+	margin-left: 100px;
+}
+
+.signup_form li input, .signup_form select { 
+    border:1px solid #fff;
+    border-radius:2px;
+    padding-right: 30px;
+    font-size: 
+}
+
+.signup_form input:focus, .signup_form textarea:focus {
+    background: #fff; 
+    border:1px solid #fff; 
+    box-shadow: 0 0 3px #aaa; 
+}
+
+button.submit {
+    background-color: #00B2B2;
+    border-radius: 3px;
+    color:white;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+ 	position: center
+}
+
+button.submit:active {
+    background-color: #007D7D;
+     
+}
+
+.col-xs-8 a:active h2 {
+	background: #D4D7D7;
+}
+
+#profpic{
+	padding: 10px;
+}
+
+.notifications button.yes {
+	border-radius: 10%;
+	background-size: 65px;
+	background-position: center;
+	margin-right: 20px;
+	background: #00CCCC;
+	color: #fff;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	width: 42%;
+}
+
+.notifications button.no {
+	border-radius: 10%;
+	background-size: 65px;
+	background-position: center;
+	margin-right: 20px;
+	background: #fff;
+	color: #00B8B8;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	width: 42%;
+}
+
+.notifications {
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+	font-family: "Dosis", sans-serif;
+	font-size: 1.3em;
+	font-weight: bold;
+	border-bottom: #D1E3E3 solid 1px;
+}
+
+.notifications button {
+	float: right;
+	margin-top: -10px;
+}
+
+div.yes-no {
+	text-align: center;
+}
+
+body.ntf-body {
+	background: #F5F5F5;
+}
+
+.pagetitle h2 {
+	font-family: "Dosis", sans-serif;
+	border-bottom: #D1E3E3 solid 1px;
+	color: #A7B6B6;
+	padding-bottom: 10px;
+}
+
+.not h2 {
+	font-family: "Dosis", sans-serif;
+	color: #A7B6B6;
+	padding-bottom: 10px;
+}
+
+div#sidr ul li button {
+	
+}
+
+body.booklist-body {
+	background: #F5F5F5;
+}
+
+.booklist {
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+	font-family: "Dosis", sans-serif;
+	font-size: 1.3em;
+	font-weight: bold;
+	border-bottom: #D1E3E3 solid 1px;
+}
+
+.booklist button {
+	float: right;
+	margin-top: -10px;
+}
+
+.booklist button.remove {
+	border-radius: 10%;
+	background-size: 65px;
+	background-position: center;
+	margin-right: 20px;
+	background: #fff;
+	color: #00B8B8;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	width: 42%;
+}
+
+#sidr {
+	background-color: #005269;
+	font-family: "Dosis", sans-serif;
+	font-size: 1.5em;
+}
+
+#sidr ul li a {
+	color: #fff;
+}
+
+#sidr {
+	border-left: 1px solid #000
+}
+
+.info p {
+	text-align: center;
+	font-family: "Dosis", sans-serif;
+}
+
+/************************************
+Add page
+************************************/
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 0 0;
+  background: #F5F5F5; 
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px 0px;
+  margin-top: -5px;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+ 
+}
+
+nav a {
+  font-weight: 800;
+}
+
+nav li a {
+	padding: 7px 13px;
+  	border: 1px solid #bbb;
+  	margin-left: -5px;
+}
+
+nav li a.selected {
+	background: #00BBBB;;
+	border: 1px solid #bbb;
+	color: #fff;
+}
+
+a.nav_1 {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px; 
+	padding: 10px 30px;
+}
+
+a.nav_2 {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px; 
+	padding: 10px 30px;
+}
+
+nav.else {
+	background: #fff;
+}
+
+.book_title {
+	color: #33CCFF;
+	font-size: 1.5em;
+}
+
+.search-results a.connect {
+	border-radius: 10%;
+	background: #00CCCC;
+	color: #fff;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	float: right;
+	margin-top: -10px;
+	clear: both;
+}
+
+#result_0 p {
+	margin-left: 20px;
+}
+
+.offers {
+	font-size: 1.3em;
+}
+
+.title {
+	color: #3399FF;
+	font-size: 1.1em;
+}
+
+.list_of_books {
+	width: 100%;
+	height: 30px;
+	margin: 10px 0; 
+	text-align: center;
+}
+
+.money {
+	clear: right;
+	float: right;
+	border: 1px solid #ddd;
+}
+
+button.connect2 {
+	border-radius: 10%;
+	background: #00CCCC;
+	color: #fff;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	float: right;
+	clear: both;
+	margin: 10px;
+	border-top: 1px solid #ddd;
+}
+
+select {
+	border: 1px solid #ddd;
+}
+
+.confirm {
+	border-top: 1px solid #aaa;
+}
+
+.action {
+	text-align: center;
+	font-size: 1.3em;
+}
+
+#person, #collegeName, #theirTxt, #youTxt, #money {
+	color: #3399FF;
+	font-size: 1.1em;
+}
+
+#title, #author, #isbn {
+	border: 1px solid #aaa;
+
+}
+
+#edition, #description, #condition {
+	border: 1px solid #bbb;
+}
+
+p.no_box {
+	border: 3px solid #eee;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+	test app
+-->
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/jquery.sidr.dark.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/parse-1.2.19.js"></script>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+		</script>
+	</head>
+
+	<body class="ntf-body">
+		<header>
+			<a href="profile.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
+			<a id="simple-menu" href="#sidr"><img src="img/settings.png" alt="settings" id="settings" height="50px" width="50px"></a>
+
+			<div id="sidr">
+				<ul>
+<!-- 	    			<li><a href="#"><b>Edit Profile</b></a></li>
+	    			<li><a href="booklist.html"><b>My Books</b></a></li> -->
+	    			<li><a href="index.html"><b>Sign Out</b></a></li>
+	  			</ul>
+			</div>
+	 
+			<script>
+			$(document).ready(function() {
+	  		$('#simple-menu').sidr();
+			});
+			</script>
+
+			
+		</header>
+
+		<div class="col-xs-12">
+
+			<div class="not">
+				<h2>Notifications</h2>
+			</div>
+
+			<nav>
+		        <ul>
+		          <li><a href="notifications.html" class="selected pending left nav_1">Pending</a></li>
+		          <li><a href="accepted.html" class="accepted right nav_2">Accepted</a></li>
+		        </ul>
+		    </nav>
+
+			<div class="allNotifications">
+
+
+
+
+			</div>
+
+		</div>
+
+		<!-- <div class="notifications">
+
+			<p><span>Usr</span> would like to trade your <span>book</span> textbook.</p>
+			<div ="yes-no">
+			<button type="submit" class="no">Ignore</button>
+			<button type="submit" class="yes">Connect</button>
+			</div>
+
+		</div>
+
+		<div class="notifications">
+
+			<p><a href="">Uzair</a> has the <a href="">Larson Precalculus (2nd Edition)</a> textbook.</p>
+			<div ="yes-no">
+			<button type="submit" class="no">Ignore</button>
+			<button type="submit" class="yes">Connect</button>
+			</div>
+
+		</div>
+
+		<div class="notifications">
+
+			<p><a href="">Zachary</a> is interested in your <a href="">Chemistry Around Us (5th Edition)</a> textbook.</p>
+			<div ="yes-no">
+			<button type="submit" class="no">Ignore</button>
+			<button type="submit" class="yes">Connect</button>
+			</div> -->
+
+
+		<script type="text/javascript">
+
+		$(document).ready(function(){
+			$("#newNot").hide();
+			$("#noResult").hide();
+			
+		
+		var currentUser = Parse.User.current();
+		
+
+		var offer = Parse.Object.extend("Notification");
+
+		var notifications = new Parse.Query(offer);
+		notifications.equalTo("owner", currentUser.id);
+		notifications.equalTo("pending", true)
+
+		notifications.find({
+		  success: function(results) {
+		    console.log("Successfully retrieved " + results.length + " notifications.");
+		    // for loop
+
+		    if(results.length === 0){
+		    	$("#noResult").show();
+		    }
+
+		    else{
+		    for (var i = 0; i < results.length; i++) { 
+		      var object = results[i];
+		      console.log(object.id + ' - ' + object.get('requestor'));
+		      var requestor = object.get('requestor');
+		      var ownerBook = object.get('ownerBook');
+		      var requestorBook = object.get('requestorBook');
+		      var requestorMoney = object.get('requestorMoney')
+		      var notId = object.id;
+
+		      var newNot = $("#newNot").clone();
+			  newNot.appendTo(".col-xs-12");
+
+			  $('#requestor').text(requestor);
+			  $('#ownerBook').text(ownerBook);
+			  $('#requestorBook').text(requestorBook);
+			  $('#requestorMoney').text(requestorMoney);
+
+			  var link = 'action.html#' + 'not_id=' + encodeURIComponent(notId) + '&' + 'requestor=' + encodeURIComponent(requestor) + '&' + 'requestorBook=' + encodeURIComponent(requestorBook) +  '&' + 'requestorMoney=' + encodeURIComponent(requestorMoney) + '&' +  'ownerBook=' + encodeURIComponent(ownerBook);
+			  $("#view").attr('href', link);
+
+			  newNot.show();
+				}; // ends for loop
+			}; //ends else statement
+		  },
+		  error: function(error) {
+		    $('h1').appendTo('.col-xs-12').text('No Results Found :(')
+		  }
+		});
+});
+
+
+		</script>
+
+		<script src="js/jquery.sidr.min.js"></script>
+
+		<div class="notifications" id="newNot">
+
+			<p><span id="requestor">Usr</span> would like to trade your <span id="ownerBook">book</span> textbook for <span id="requestorBook">book</span> + USD $<span id="requestorMoney">30.00</span></p>
+			<div ="yes-no">
+			<a href="" class="yes" id="view">View</a>
+			<!-- <button type="submit" class="no" id="no">Decline</button>
+			<button type="submit" class="yes" id="yes">Accept</button> -->
+			</div>
+
+		</div>
+
+		<div id="noResult">
+			<h1 style="text-align: center ; padding-top:6.5em">No New Notifications</h1>
+		</div>
+
+
+	</body>
+</html   

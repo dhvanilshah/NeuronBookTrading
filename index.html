@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+	test app
+-->
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/parse-1.2.19.js"></script>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+		</script>
+	</head>
+
+	<body class="login_body">
+		<header>
+		<div class="col-xs-12">
+				<img src="img/logo.png" class="login_logo">
+		</div>
+		</header>
+
+		<form id="signin"class="login_form" name="login_form" action="" method="post">
+		
+			<div class="col-xs-12">
+
+				<ul>
+							
+					<li>
+						<div class="input_container">
+							<input id="username" type="text" name="title" placeholder="username"/>
+							<img src="img/user.png" class="input_img">
+						</div>
+					</li>
+					
+					<li>
+						<div class="input_container">
+							<input id="password" type="password" name="author" placeholder="password"/>
+							<img src="img/pass.png" class="input_img">
+						</div>
+					</li>
+
+					<div class="buttons">
+						<li class="button">
+							<button class="signin" type="Submit">Sign In</button>
+
+						<li class="register">
+							<a href="signup.html" class="register" type="register">New? Register!</a>
+						</li>
+					</div>
+
+				</ul>
+			</div>
+
+		</form>	
+	
+		<script type="text/javascript">
+
+	$("#signin").submit(function(event){
+
+		event.preventDefault();
+
+
+			var username = $("#username").val();
+			var password = $("#password").val();
+			if (username === "" || password === "") {
+				alert("Please fill up the fields below.");
+			}
+			else {
+			Parse.User.logIn(username, password, {
+			  success: function(user) {
+			  	console.log("success!");
+			    location.href="profile.html";
+			  },
+			  error: function(user, error) {
+			    // The login failed. Check error to see why.
+			  }
+			});
+			}
+	}); 		
+		</script>
+
+	</body>
+</html>

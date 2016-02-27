@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--
+	test app
+-->
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/parse-1.2.19.js"></script>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	// Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+	// </script>
+
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
+
+	</header>
+	<form id="signup_form" class="signup_form" name="signup_form" action="#" method="post">
+		<div class="col-xs-12">
+
+			<ul>
+
+				<li>
+					<input id="firstName" type="text" name="firstName" placeholder="First Name" required />
+				</li>
+
+				<li>
+					<input id="lastName" type="text" name="lastName" placeholder="Last Name" required/>
+				</li>
+
+				<li>
+					<input id="email" type="text" name="email" placeholder="Email" required>
+				</li>
+
+				<li>
+					<input id="retype_email" type="text" name="email" placeholder="Re-type email" required>
+				</li>
+
+
+				<li>
+					<select id="school" name="colleges" required>
+						<option value="Choose">Choose your school</option>
+						<option value="New York University">New York University</option>
+						<option value="LIU Brooklyn">LIU Brooklyn</option>
+						<option value="Barnard College">Barnard College</option>
+						<option value="Columbia University">Columbia University</option>
+						<option value="Manhattan College">Manhattan College</option>
+						<option value="Fordham University">Fordham University</option>
+						<option value="The New School">The New School</option>
+						<option value="Pace University">Pace University</option>
+						<option value="Yeshiva University">Yeshiva University</option>
+						<option value="The Rockefeller University">The Rockefeller University</option>
+						<option value="School of Visual Arts">School of Visual Arts</option>
+						<option value="St. John's University">St. John's University</option>
+						<option value="Hunter College, CUNY">Hunter College, CUNY</option>
+						<option value="The Juilliard School">The Juilliard School</option>
+						<option value="Wagner College">Wagner College</option>
+						<option value="College of Staten Island">College of Staten Island</option>
+						<option value="Adelphi University">Adelphi University</option>
+						<option value="Wentworth Institiute of Technology">Wentworth Institiute of Technology</option>
+					</select>
+				</li>
+
+				<li>
+					<input id="username" type="text" name="username" placeholder="Username" required>
+				</li>
+
+				<li>
+					<input id="password" type="password" name="password" placeholder="Password" required >
+					<span>Password Must Be Atleast 8 Character</span>
+				</li>
+
+				<!-- <li>
+					<form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
+						<fieldset>
+							<input type="file" name="fileselect" id="fileselect"></input>
+							<input id="uploadbutton" type="button" value="Upload to Parse"/>
+						</fieldset>
+					</form>
+
+				</li> -->
+
+						<li>
+							<input id="cpassword" type="password" name="verifyPass" placeholder="Re-type password">
+							<span>Password Do Not Match</span>
+						</li>
+
+						
+						<!-- <li>
+
+							<label for="profilePicture">Add a Pic:</label>
+						 	<input id="profpic" type="file" name="profilePic">
+
+						 </li> -->
+						 <!-- <input id="profpic" type="file" accept="image/*" capture="camera" name="profilePic"> -->
+						 <!-- <input id="profpic"type="file"></input> -->
+
+
+				 <li>
+				 	<button id="submtbtn" class="submit" type="Submit" disabled> Submit </button>
+				 </li>
+
+
+			</ul>
+
+
+
+		</div>
+	</form>
+
+	<script type="text/javascript">
+
+		$("form span").hide();
+
+		var $password = $("#password");
+		var $cpassword = $("#cpassword");
+
+		function isPasswordValid() {
+			return $password.val().length > 7;
+		}
+
+		function arePasswordsMatching() {
+			return $password.val() === $cpassword.val();
+		}
+
+		function canSubmit() {
+			return isPasswordValid() && arePasswordsMatching();
+		}
+
+		$password.css({'background-color' : '#ffffff' })
+
+		function passwordLength () {
+
+			if (isPasswordValid()) {
+
+				$password.next().hide();
+				$password.css({'background-color' : '#A3FF47' });
+			}
+
+			else {
+
+				$password.next().show();
+				$password.css({'background-color' : '#ffffff' });
+			}
+
+		}
+
+		function confirmPassword () {
+
+			if ( arePasswordsMatching() ) {
+
+				$cpassword.next().hide();
+				$cpassword.css({'background-color' : '#A3FF47' });
+			}
+
+			else {
+
+				$cpassword.next().show();
+				$cpassword.css({'background-color' : '#3399FF' });
+			}
+
+		}
+
+
+		function enableSubmitEvent(){
+			$('#submtbtn').prop("disabled", !canSubmit());	
+		}
+
+		$password.focus(passwordLength).keyup(passwordLength).keyup(confirmPassword).keyup(enableSubmitEvent);
+		
+		$cpassword.focus(confirmPassword).keyup(confirmPassword).keyup(enableSubmitEvent);
+
+		enableSubmitEvent();
+
+
+// ***************************************************************
+
+// This is all the Parse code which stores the information to the cloud
+		Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+
+
+		$("#signup_form").submit(function(event){
+
+			event.preventDefault();
+
+			var user = new Parse.User();
+
+			var firstName = $("#firstName").val();
+			var lastName = $("#lastName").val();
+			var email = $("#email").val();
+			var school = $("#school").val();
+			var username = $("#username").val();
+			var password = $("#password").val();
+			var password = $("#password").val();
+			// var cpassword = $("#cpassword").val();
+			// var profpic = $("#profpic").val();
+
+			user.set("firstName", firstName);
+			user.set("lastName", lastName);
+			user.set("email", email);
+			user.set("school", school);
+			user.set("username", username);
+			user.set("password", password);
+			// user.set("cpassword", cpassword);
+			// user.set("profpic", profpic);
+
+			user.signUp(null, {
+				success: function(user) {
+					console.log("Success!");
+					location.href="index.html";
+				},
+
+				error: function(user, error) {
+			    // Show the error message somewhere and let the user try again.
+			    // alert("Error: " + error.code + " " + error.message);
+			    // console.log(error.code)
+
+			    // function Error (){
+			    // 	return error.code === 125
+			    // }
+
+			    // console.log(Error())
+
+			    if (error.code === 202) {
+			    	console.log("username is taken");
+			    	$("#email").val("This username is taken :(")
+			    	}
+			    
+			    else if (error.code === 203){
+			    	console.log("email is taken");
+			    	}
+
+			    else if (error.code === 125) {
+			    	console.log("email is invalid");
+			    	$("#email").attr("placeholder", "This email is invalid :(")
+			    }
+
+			    else {
+			    	console.log("WTF is going on??")
+			    }
+
+
+				}
+		    
+		    });
+
+
+	});
+
+	</script>
+
+
+
+
+</body>
+</html>

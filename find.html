@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/nobox.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/jquery.sidr.dark.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/parse-1.2.19.js"></script>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<a href="profile.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
+			<a id="simple-menu" href="#sidr"><img src="img/settings.png" alt="settings" id="settings" height="50px" width="50px"></a>
+
+			<div id="sidr">
+				<ul>
+<!-- 	    			<li><a href="#"><b>Edit Profile</b></a></li>
+	    			<li><a href="booklist.html"><b>My Books</b></a></li> -->
+	    			<li><a href="index.html"><b>Sign Out</b></a></li>
+	  			</ul>
+			</div>
+	 
+			<script>
+			$(document).ready(function() {
+	  		$('#simple-menu').sidr();
+			});
+			</script>
+		</header>
+		
+		<div class="theForms">
+		<div class="col-xs-12">
+		<div class="pagetitle">
+		<h2>Find a Book</h2>
+		</div>
+		</div>
+<!-- Search By Title -->
+		<form id="Titleform" class="book_form" name="book_form" action="" method="post">
+			<div class="col-xs-12">
+				<ul>							
+					<li>
+						<input id="title" type="text" name="title" placeholder="Title"/>
+					</li>
+					
+					<li>
+							<button id="submitbtnTitle"class="submit" type="Submit">Search</button>
+					</li>
+				</ul>
+			</div>
+		</form>	
+<!-- Search By Author -->
+		<!-- <form id="Authorform" class="book_form" name="book_form" action="" method="post">
+			<div class="col-xs-12">
+				<ul>							
+					<li>
+						<input id="author" style="border: 1px solid #aaa" type="text" name="author" placeholder="Author"/>
+					</li>
+					
+					<li>
+							<button id="submitbtnAuthor"class="submit" type="Submit">Search by Author</button>
+					</li>
+				</ul>
+			</div>
+		</form>	 -->
+<!-- Search By ISBN -->
+		<!-- <form id="Isbnform" class="book_form" name="book_form" action="" method="post">
+			<div class="col-xs-12">
+				<ul>							
+					<li>
+						<input id="isbn" type="text" name="isbncode" placeholder="ISBN"/>
+					</li>
+					
+					<li>
+							<button id="submitbtnIsbn"class="submit" type="Submit">Search by ISBN Number</button>
+					</li>
+				</ul>
+			</div>
+		</form>	 -->
+<!-- End of all Search Options, The div below is to clear the page upon the submission of either form -->
+	</div>
+
+<!-- This is the "result box" with info for every entry-->
+
+<div class="col-xs-12">
+		<div class="pagetitle">
+			<h2>Results for: <span id="resultFor">txt</span></h2>
+		</div>
+
+		<div class="search-results">
+			
+		</div>
+	</div>
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
+
+		<script src="js/jquery.sidr.min.js"></script>
+		<script src="js/find.js"></script>
+
+
+
+			<div id="sample-result" style="display: none; padding-bottom: 1.8em; border-bottom: 1px solid #dfdfdf">
+				<h4 class="book_title" id="bookName"><b>txt</b></h4>
+				<p class="result_author" id="author">txt</p>
+				<p id="condition">txt</p>
+				<p id="owner">txt</p>
+				<div class="yes-no">
+					<a href="offer.html" class="connect" id="connect"><b>Connect</b></a>
+				</div>
+			</div>
+	</body>
+</html>

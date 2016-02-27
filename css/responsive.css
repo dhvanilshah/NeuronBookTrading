@@ -1,0 +1,13 @@
+@media screen and (min-width: 480px) {
+	#notifications {
+		font-size: 3em;
+	}
+
+	#add {
+		font-size: 3em;
+	}
+
+	#find {
+		font-size: 3em;
+	}
+}
